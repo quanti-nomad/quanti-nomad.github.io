@@ -25,7 +25,7 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.6;
-         font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+         -webkit-font-smoothing: antialiased; }
   a { color: var(--green); font-weight: 500; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: rgba(8, 122, 85, 0.35); }
   a:hover { text-decoration-color: var(--green); }
   :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
@@ -99,13 +99,16 @@
 
   /* experience */
   .jobs { list-style: none; }
-  .jobs li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--rule); }
-  .jobs li:first-child { border-top: none; padding-top: 0; }
-  .jobs .yrs { color: var(--green); font-weight: 600; font-size: 15px; padding-top: 2px; }
+  .jobs > li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--rule); }
+  .jobs > li:first-child { border-top: none; padding-top: 0; }
+  .jobs .yrs { color: var(--green); font-weight: 600; font-size: 15px; padding-top: 2px; font-variant-numeric: tabular-nums; }
   .jobs .title { font-weight: 600; }
   .jobs .org { color: var(--slate); }
   .jobs .desc { margin-top: 4px; color: var(--slate); }
-  .jobs ul { margin: 12px 0 0 18px; display: grid; gap: 6px; }
+  .jobs ul { margin: 12px 0 0 20px; display: grid; gap: 8px; }
+  .jobs ul { list-style: disc; }
+  .jobs ul li { padding-left: 4px; }
+  .jobs ul li::marker { color: var(--slate); }
 
   /* skills */
   .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px 36px; }
@@ -135,7 +138,7 @@
     .pair, .rules { grid-template-columns: 1fr; gap: 24px; }
     .project.feature { padding: 26px 22px; }
     .contact-band { padding: 56px 0 48px; }
-    .jobs li { grid-template-columns: 1fr; gap: 4px; }
+    .jobs > li { grid-template-columns: 1fr; gap: 4px; }
     .skills { grid-template-columns: 1fr 1fr; gap: 24px; }
     .links div { grid-template-columns: 90px 1fr; }
   }
